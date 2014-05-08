@@ -56,6 +56,10 @@
       <Project>{5a0c4f78-7759-48fe-acc6-6de99d371487}</Project>
       <Name>PlaylistSaver.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Njoy\PlaylistSaver.Radio.Njoy.csproj">
+      <Project>{2d3d327d-0f8d-438d-9276-1c23924c2599}</Project>
+      <Name>PlaylistSaver.Radio.Njoy</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
