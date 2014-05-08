@@ -8,7 +8,7 @@ namespace PlaylistSaver.Core
 {
     public interface IPlaylistSaver
     {
-        TimeSpan GetAvailableTimes();
+        StartEndSpan GetAvailableTimes();
         List<PlaylistEntry> GetEntrys(DateTime time);
     }
 }
