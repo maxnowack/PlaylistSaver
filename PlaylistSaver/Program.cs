@@ -26,7 +26,7 @@ namespace PlaylistSaver
         {
             //LoadAdditionalAssemblies();
 
-            var instances = Factory<IPlaylistSaver>.CreateInstanceList();
+            var instances = Factory<IPlaylistSaver>.CreateInstanceList().ToList();
             var entries = new List<PlaylistEntry>();
             foreach (var playlistSaver in instances)
             {
