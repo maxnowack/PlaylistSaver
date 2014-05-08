@@ -32,8 +32,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsQuery">
+      <HintPath>..\packages\CsQuery.1.3.4\lib\net40\CsQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.92.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.92.0\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.92.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.92.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.92.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,16 +71,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlaylistSaver.Core\PlaylistSaver.Core.csproj">
       <Project>{5a0c4f78-7759-48fe-acc6-6de99d371487}</Project>
       <Name>PlaylistSaver.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Antenne\PlaylistSaver.Radio.Antenne.csproj">
+      <Project>{d4fdebfa-0a1f-447f-8240-b1037bc828a9}</Project>
+      <Name>PlaylistSaver.Radio.Antenne</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Ffn\PlaylistSaver.Radio.Ffn.csproj">
+      <Project>{5f7a45d1-c179-4695-bec4-f383e4887dda}</Project>
+      <Name>PlaylistSaver.Radio.Ffn</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlaylistSaver.Radio.Njoy\PlaylistSaver.Radio.Njoy.csproj">
       <Project>{2d3d327d-0f8d-438d-9276-1c23924c2599}</Project>
       <Name>PlaylistSaver.Radio.Njoy</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
