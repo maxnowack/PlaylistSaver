@@ -9,7 +9,12 @@ namespace PlaylistSaver.Radio.Njoy
 {
     public class NjoySaver : IPlaylistSaver
     {
-        public TimeSpan GetAvailableTimes()
+        public static IPlaylistSaver Create()
+        {
+            return new NjoySaver();
+        }
+
+        public StartEndSpan GetAvailableTimes()
         {
             throw new NotImplementedException();
         }
