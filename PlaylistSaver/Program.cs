@@ -30,23 +30,33 @@ namespace PlaylistSaver
             var entries = new List<PlaylistEntry>();
             foreach (var playlistSaver in instances)
             {
+                var times = new List<DateTime>();
                 try
                 {
-                    var times = playlistSaver.GetAvailableTimes().GetTimesForInterval(playlistSaver.DefaultInterval);
-                    foreach (var dateTime in times)
-                    {
-                        entries.AddRange(playlistSaver.GetEntrys(dateTime));
-                    }
+                    times = playlistSaver.GetAvailableTimes().GetTimesForInterval(playlistSaver.DefaultInterval);
                 }
                 catch (NotImplementedException nie)
                 {
                     Debug.WriteLine(nie);
                 }
-                catch (Exception e)
+
+                foreach (var dateTime in times)
                 {
-                    Debug.WriteLine(e);
+                    try
+                    {
+                        entries.AddRange(playlistSaver.GetEntrys(dateTime));
+                    }
+                    catch (NotImplementedException nie)
+                    {
+                        Debug.WriteLine(nie);
+                    }
                 }
             }
+
+            var unique = entries.Distinct();
+
+
+
             Console.WriteLine(instances.Count());
             Console.ReadLine();
         } 
