@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,10 @@ namespace PlaylistSaver
                     try
                     {
                         entries.AddRange(playlistSaver.GetEntrys(dateTime));
+                    }
+                    catch (WebException we)
+                    {
+                        Debug.WriteLine(we);
                     }
                     catch (NotImplementedException nie)
                     {
