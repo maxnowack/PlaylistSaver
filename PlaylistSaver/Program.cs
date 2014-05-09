@@ -32,7 +32,7 @@ namespace PlaylistSaver
             {
                 try
                 {
-                    var times = playlistSaver.GetAvailableTimes().GetTimesForInterval(TimeSpan.FromMinutes(10));
+                    var times = playlistSaver.GetAvailableTimes().GetTimesForInterval(playlistSaver.DefaultInterval);
                     foreach (var dateTime in times)
                     {
                         entries.AddRange(playlistSaver.GetEntrys(dateTime));
