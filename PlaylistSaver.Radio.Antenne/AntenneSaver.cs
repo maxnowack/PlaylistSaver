@@ -9,6 +9,7 @@ namespace PlaylistSaver.Radio.Antenne
 {
     public class AntenneSaver : IPlaylistSaver
     {
+        public string Name { get { return "Hitradio Antenne"; } }
         public TimeSpan DefaultInterval { get { return TimeSpan.FromMinutes(5); } }
         public static IPlaylistSaver Create()
         {
