@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaylistSaver.Radio.Antenne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaylistSaver.Radio.890Rtl", "PlaylistSaver.Radio.890Rtl\PlaylistSaver.Radio.890Rtl.csproj", "{F268B93C-9115-47D8-86F9-F1718B9FF2E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaylistSaver.Radio.Planet", "PlaylistSaver.Radio.Planet\PlaylistSaver.Radio.Planet.csproj", "{994120A6-44F5-4010-9B6A-FB9E762D497A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{F268B93C-9115-47D8-86F9-F1718B9FF2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F268B93C-9115-47D8-86F9-F1718B9FF2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F268B93C-9115-47D8-86F9-F1718B9FF2E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{994120A6-44F5-4010-9B6A-FB9E762D497A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{994120A6-44F5-4010-9B6A-FB9E762D497A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{994120A6-44F5-4010-9B6A-FB9E762D497A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{994120A6-44F5-4010-9B6A-FB9E762D497A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,5 +62,6 @@ Global
 		{2D3D327D-0F8D-438D-9276-1C23924C2599} = {500C7B16-D169-4751-BEAD-CAEF14B614D2}
 		{D4FDEBFA-0A1F-447F-8240-B1037BC828A9} = {500C7B16-D169-4751-BEAD-CAEF14B614D2}
 		{F268B93C-9115-47D8-86F9-F1718B9FF2E1} = {500C7B16-D169-4751-BEAD-CAEF14B614D2}
+		{994120A6-44F5-4010-9B6A-FB9E762D497A} = {500C7B16-D169-4751-BEAD-CAEF14B614D2}
 	EndGlobalSection
 EndGlobal
