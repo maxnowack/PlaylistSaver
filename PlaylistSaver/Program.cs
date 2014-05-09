@@ -43,6 +43,7 @@ namespace PlaylistSaver
 
                 foreach (var dateTime in times)
                 {
+                    Console.WriteLine("{0}: {1:yyyy-MM-dd HH:mm}", playlistSaver.Name, dateTime);
                     try
                     {
                         entries.AddRange(playlistSaver.GetEntrys(dateTime));
