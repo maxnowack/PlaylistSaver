@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PlaylistSaver.Core
 {
@@ -15,20 +12,20 @@ namespace PlaylistSaver.Core
         {
             get
             {
-                return this.End.Subtract(this.Start);
+                return End.Subtract(Start);
             }
         }
 
         public StartEndSpan(DateTime start, DateTime end)
         {
-            this.Start = start;
-            this.End = end;
+            Start = start;
+            End = end;
         }
 
         public List<DateTime> GetTimesForInterval(TimeSpan interval)
         {
             var retVal = new List<DateTime>();
-            for (var current = this.Start; current <= this.End; current += interval)
+            for (var current = Start; current <= End; current += interval)
             {
                 retVal.Add(current);
             }
