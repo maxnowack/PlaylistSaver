@@ -62,7 +62,7 @@ namespace PlaylistSaver
 
 
 
-            Console.WriteLine(instances.Count());
+            Console.WriteLine("{0}/{1}", unique.Count(), entries.Count());
             Console.ReadLine();
         } 
     }
