@@ -1,0 +1,993 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html>
+<head>
+    <style type="text/css">
+    .cms_placeholder-bar{ display: none !important; }
+    </style>
+
+    <title>Musik & Stars - Antenne Niedersachsen - Radio für Niedersachsen, Bremen und Hamburg</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Hören Sie im Webradio die Hits von heute und die Antenne Greatest Hits" />
+    <meta name="robots" content="noopd" />
+    <meta name="robots" content="noydir" />
+    <meta name="googlebot" content="NOODP" />
+    
+    
+        
+        <meta property="og:image" content="http://cdn.antenne.com/static/img/ant-logo-004.png"/>
+        <meta property="og:url" content="http://www.antenne.com/on-air/webradio/"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:site_name" content="Antenne Niedersachsen"/>
+    
+
+    <meta property="fb:admins" content="1167417731,1188992334,100000714065223"/>
+    <meta property="fb:app_id" content="106948642254"/>
+
+    <link rel="radioepg" href="http://rdns.antenne.com/radiodns/epg/XSI.xml"/>
+    
+    <link rel="SHORTCUT ICON" href="http://cdn.antenne.com/static/img/favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" title="Antenne Niedersachsen" href="/feed/" />
+    <link rel="stylesheet" href="http://cdn.antenne.com/static/cache/css/83b510d86f6a.css" type="text/css" media="screen" charset="utf-8" />
+
+    
+    
+
+    <script type="text/javascript" src="https://script.ioam.de/iam.js"></script>
+    <script type="text/javascript" src="http://cdn.antenne.com/static/cache/js/da3d90300a40.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    (function ($) {
+        $(document).ready(function(){var token = $("input[name='csrfmiddlewaretoken']").val() || null;
+            exp=new Date();exp.setTime(+ exp + (30*86400000));
+            if(token){window.document.cookie='csrftoken='+token+';expires='+exp.toGMTString()+';path=/'}
+        });
+    })(jQuery)
+    </script>
+    <noscript><img src="/token.gif" width="1" height="1" alt="" /></noscript>
+
+    <script type="text/javascript">AudioPlayer.setup("http://cdn.antenne.com/static/swf/player.swf", {width: 290});</script>
+    <script type="text/javascript">
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1&appId=106948642254";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    
+
+
+    
+    <script  type="text/javascript">
+    
+    var exusercreds = "";
+    function OpenChatWin() {
+        var chat_url="http://web.antenne.com/chat/" + exusercreds;
+        window.open(chat_url, "Chat", "width=846,height=640");
+    }
+    </script>
+    
+    
+    
+    
+    
+    <script type="text/javascript" charset="utf-8">
+    (function ($) {
+        $(document).ready(function(){
+            /*
+                Reload the playlist. Optionally trigger a ivw hit.
+                Takes two optional arguments:
+
+                    data: serialized form data to send.
+                    ivw: boolean, whether to hit the ivw counter.
+            */
+            window.reload_playlist = function(data, ivw){
+                if(data == null){
+                    data = {csrfmiddlewaretoken:$('#playlist_form input[name="csrfmiddlewaretoken"]').val()};
+                }else{
+                    data['csrfmiddlewaretoken'] = $('#playlist_form input[name="csrfmiddlewaretoken"]').val();
+                }
+                $.post('/on-air/webradio/', data, function(data) {
+                    $('#playlist_box').html(data);
+                    $("#reload_playlist").css('visibility', 'visible');
+                    if(ivw === true) {
+                        window.countIVW();
+                    }
+                });
+            };
+
+            /*
+                Javascript is enabled, display the reload link, on click
+                reload the playlist box.
+            */
+            $("#reload_playlist").css('visibility', 'visible').live('click', function(){
+                window.reload_playlist(null, true);
+                return false;
+            });
+
+            /*
+                Click on one of the select boxes, serialize the form content
+                and get the playlist box content.
+            */
+            $('#playlist_form :input').live('change', function(){
+                window.reload_playlist($("#playlist_form").serialize(), true);
+                return false;
+            });
+
+            //window.reload_playlist(null, false)
+        });
+    })(jQuery);
+    </script>
+
+    <style type="text/css">
+        /* reload link is hidden by default, js enables it */
+        #reload_playlist{display:inline; visibility:hidden;}
+        .playlist_photo{width: 280px; float: left;}
+        .playlist_photo img{ width: 250px; height: 250px; }
+        .playlist_body{margin-left: 280px; }
+    </style>
+
+</head>
+
+<body class="music">
+    
+    
+    <div class="wrapper" id="pagewrapper">
+        
+        
+        <div id="brand" style="
+            background-image: url(http://cdn.antenne.com/media/filer/2014/04/28/fahrrad-fruhling_top-header.png);
+            background-position: 0px 0px;
+        ">
+            
+                <a href="http://www.antenne.com/on-air/aktionen-und-events/aktionen/antenne-niedersachsen-fahrrad-fruehling/" id="brand-click"></a>
+            
+            <a href="/" id="logo-click"><img id="logo"src="http://cdn.antenne.com/static/img/ant-logo-004.png" alt="Antenne Niedersachsen" /></a>
+            
+        </div>
+        
+        <div id="color-header">
+            
+            <div id="metamenu">
+            <a href="http://www.antenne.com/on-air/webradio/">Playlist</a> | <a href="mailto:studio@antenne.com">Studio-Mail</a> | <a href="http://www.antenne-radiowerbung.de/">Ihre Radio-Werbung</a> 
+            </div>
+            
+        </div>
+        <div id="color">
+            <div id="navigation">
+                <form method="GET" action="/suche/" id="nav-search">
+                    <input class="text" type="text" name="q" placeholder="Suche"/>
+                    <input class="submit" type="image" src="http://cdn.antenne.com/static/img/ant-nav-search.png"/>
+                    <a href="/redirect/twitteri" target="_blank">
+                        <img class="tw" src="http://cdn.antenne.com/static/img/ant-nav-twitter.png"/>
+                    </a>
+                    <a href="/redirect/facebook" target="_blank">
+                        <img class="fb" src="http://cdn.antenne.com/static/img/ant-nav-fb.png"/>
+                    </a>
+                </form>
+                <ul id="menu">
+                    <li id="nav-home"><a href="/"><img src="http://cdn.antenne.com/static/img/ant-home-2.png" alt="zurück zur Startseite" /></a></li>
+                     
+                    
+<li class="sibling">
+    <a href="/morgenshow/">&quot;Moin-Show&quot;</a>
+    
+        <div><span></span>
+        <ul>
+            <li><a href="/morgenshow/aus-der-moin-show/">Aus der Show ...</a></li>
+        
+            <li><a href="/morgenshow/aus-der-moin-show/moin-show-team/">Team</a></li>
+        
+            <li><a href="/morgenshow/moin-show-blog/">Blog</a></li>
+        </ul>
+        </div>
+    
+</li>
+
+<li class="sibling">
+    <a href="/on-air/">On Air</a>
+    
+        <div><span></span>
+        <ul>
+            <li><a href="/on-air/aktionen-und-events/">Aktionen &amp; Events</a></li>
+        
+            <li><a href="/on-air/die-moderatoren/">Moderatoren</a></li>
+        
+            <li><a href="/on-air/webradio/">Webradio &amp; Playlist</a></li>
+        
+            <li><a href="/on-air/spiele/">Spiele</a></li>
+        
+            <li><a href="/on-air/comedy/">Comedy</a></li>
+        
+            <li><a href="/on-air/mediathek/">Mediathek</a></li>
+        
+            <li><a href="/on-air/webcam/">Studiocam</a></li>
+        </ul>
+        </div>
+    
+</li>
+
+<li class="sibling">
+    <a href="/news-service/">News &amp; Service</a>
+    
+        <div><span></span>
+        <ul>
+            <li><a href="/news-service/nachrichten/">Nachrichten</a></li>
+        
+            <li><a href="/news-service/vereintes-niedersachsen/">Vereine</a></li>
+        
+            <li><a href="/news-service/jobportal/">Job-Portal</a></li>
+        
+            <li><a href="/news-service/verkehrszentrum/">Verkehr</a></li>
+        
+            <li><a href="/news-service/wetter/">Wetter</a></li>
+        
+            <li><a href="/news-service/veranstaltungskalender/">Veranstaltungskalender</a></li>
+        
+            <li><a href="/news-service/schulausfaelle-niedersachsen/">Schulausfälle</a></li>
+        
+            <li><a href="/news-service/service/">Mehr Service...</a></li>
+        </ul>
+        </div>
+    
+</li>
+
+<li class="sibling">
+    <a href="/sender/">Sender</a>
+    
+        <div><span></span>
+        <ul>
+            <li><a href="/sender/jobs-praktika/">Jobs &amp; Praktika</a></li>
+        
+            <li><a href="/mediadaten/">Werbung: Mediadaten</a></li>
+        
+            <li><a href="/sender/frequenzen/">Frequenzen</a></li>
+        
+            <li><a href="/sender/regionalstudios/">Regionalstudios</a></li>
+        
+            <li><a href="/sender/team/">Team</a></li>
+        
+            <li><a href="/sender/kontakt/">Kontakt</a></li>
+        
+            <li><a href="/sender/antenne-fuer-kinder/">Antenne hilft e.V.</a></li>
+        
+            <li><a href="/sender/antenne-niedersachsen-bildschirmschoner/">Bildschirmschoner</a></li>
+        </ul>
+        </div>
+    
+</li>
+
+ 
+                </ul>
+
+                <script type="text/javascript">
+                $("#menu > li:not(:last)").append($('<b class="pipe">|</b>'));
+
+                $("#menu > li[id!=nav-home]").mouseenter( function(evnt) {
+                    $(this).children("a").css({'background-color': '#fff'});
+                    var sub_menu = $(this).find("div");
+                    $(sub_menu).show();
+                });
+
+                $("#menu > li[id!=nav-home]").mouseleave( function(evnt) {
+                    $(this).children("a").css({'background-color': ''});
+                    var sub_menu = $(this).find("div");
+                    $(sub_menu).hide();
+                });
+                </script>
+
+                
+            </div>
+            <div class="segment">
+                
+
+<div class="wrapper">
+    <div class="content">
+        <div class="row">
+            
+            <div class="slot-left">
+                
+    <div class="top-teaser"  id="playlist_box">
+        
+
+
+
+<div class="top-teaser-top"></div>
+<div class="top-teaser-bottom"></div>
+<div class="top-teaser-center">
+    <div class="top-box-image">
+        
+            <a href="/on-air/star-archiv/pharrell-williams/">
+            
+            <img src="http://cdn.antenne.com/media/artists/thumbs/pharrell_williams.jpg.280x250_q80_crop.jpg" alt="Bild von " width="280" height="250" />
+            </a>
+        
+    </div>
+
+    <div class="top-box-data">
+        <a href="." id="reload_playlist">Playlist aktualisieren</a>
+        <form id="playlist_form" method="POST" action="."><div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='a6e0ccf4e3999dd69d0613606b25b0e3' /></div>  
+            
+            <select name="date" id="id_date">
+<option value="0">heute</option>
+<option value="1">gestern</option>
+<option value="2">vorgestern</option>
+</select>
+            <select name="time_hour" id="id_time_hour">
+<option value="0">00</option>
+<option value="1">01</option>
+<option value="2">02</option>
+<option value="3">03</option>
+<option value="4">04</option>
+<option value="5">05</option>
+<option value="6">06</option>
+<option value="7">07</option>
+<option value="8">08</option>
+<option value="9">09</option>
+<option value="10" selected="selected">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+</select> <select name="time_minute" id="id_time_minute">
+<option value="0">00</option>
+<option value="5">05</option>
+<option value="10" selected="selected">10</option>
+<option value="15">15</option>
+<option value="20">20</option>
+<option value="25">25</option>
+<option value="30">30</option>
+<option value="35">35</option>
+<option value="40">40</option>
+<option value="45">45</option>
+<option value="50">50</option>
+<option value="55">55</option>
+</select> <label>Uhr</label>
+            <noscript><input type="submit" value="Go"/></noscript>
+            
+        </form>
+        <table id="playlist-table">
+            <tr>
+                <th>Zeit</th>
+                <th>Song</th>
+                <th>mag ich</th>
+            </tr>
+            
+                <tr>
+                    <td class="playlist-time">10:05</td>
+                    <td><a href="/on-air/star-archiv/pharrell-williams/">
+                    Pharrell Williams<br /><span class="playlist-title">Happy</span>
+                    
+                    </a></td>
+                    
+                        
+                        <td>
+
+<div class="i-like">
+<a href="/mag-ich/song/neu/3616/" title="Das mag ich!" class="login-only faver login-required song_fav fave"><span class="unfaved"></span></a>
+</div></td>
+                    
+                </tr>
+            
+                <tr>
+                    <td class="playlist-time">10:01</td>
+                    <td><a href="/on-air/star-archiv/fleetwood-mac/">
+                    Fleetwood Mac<br /><span class="playlist-title">Don&#39;t Stop</span>
+                    
+                    </a></td>
+                    
+                        
+                        <td>
+
+<div class="i-like">
+<a href="/mag-ich/song/neu/705/" title="Das mag ich!" class="login-only faver login-required song_fav fave"><span class="unfaved"></span></a>
+</div></td>
+                    
+                </tr>
+            
+                <tr>
+                    <td class="playlist-time">09:59</td>
+                    <td>
+                    Bastille<br /><span class="playlist-title">Pompeii</span>
+                    
+                    </td>
+                    
+                        
+                        <td>
+
+<div class="i-like">
+<a href="/mag-ich/song/neu/3242/" title="Das mag ich!" class="login-only faver login-required song_fav fave"><span class="unfaved"></span></a>
+</div></td>
+                    
+                </tr>
+            
+                <tr>
+                    <td class="playlist-time">09:51</td>
+                    <td><a href="/on-air/star-archiv/phil-collins/">
+                    Phil Collins<br /><span class="playlist-title">Two Hearts</span>
+                    
+                    </a></td>
+                    
+                        
+                        <td>
+
+<div class="i-like">
+<a href="/mag-ich/song/neu/508/" title="Das mag ich!" class="login-only faver login-required song_fav fave"><span class="unfaved"></span></a>
+</div></td>
+                    
+                </tr>
+            
+            </table>
+    </div>
+</div> 
+         
+    </div>
+    <div class="box-simple-540 box-article textbox">
+    <div class="box-simple-540 box-top"></div>
+    <div class="box-simple-540 box-bottom"></div>
+    <div class="box-simple-540-center">
+        <div class="box-content box-row padded textbox">
+            <h1>Die digitale Vielfalt von Antenne Niedersachsen - ihr habt die Wahl!</h1><p>
+
+<a href="http://player.antenne.com/HRA-Nds/" class="popup-link" width="1115" height="715">
+<img
+    class="left"
+    
+    src="http://cdn.antenne.com/media/filer_thumbnails/2013/08/13/219x225-icon-main.png__500x500_q80.png"
+/>
+</a></p><h2 class="floating">Antenne Niedersachsen</h2><p>Die Hits von heute und die Antenne Greatest Hits - hört unser aktuelles Programm live im Internet. Die Moin-Show mit Wenke und Worlitzer sorgt für einen guten Start in den Tag! "Haxi Turan bei der Arbeit" sorgt für gute Laune während der Arbeit. Verena Kortmann bringt euch von " 5 vor 2 bis frei" gut in den Feierabend. Und am Abend ist Michi Schrader für euch da. Dazu Comedy, Gewinnspiele und vieles mehr. <a href="http://player.antenne.com/HRA-Nds/" class="popup-link" width="1115" height="715">Play now!</a></p>
+
+        </div>
+    </div>
+</div><div class="box-simple-540 box-article textbox">
+    <div class="box-simple-540 box-top"></div>
+    <div class="box-simple-540 box-bottom"></div>
+    <div class="box-simple-540-center">
+        <div class="box-content box-row padded textbox">
+            <p>
+
+<a href="http://player.antenne.com/HRA-Hb/" class="popup-link" width="1115" height="715">
+<img
+    class="left"
+    
+    src="http://cdn.antenne.com/media/filer_thumbnails/2013/08/13/219x225-icon-bremen.png__500x500_q80.png"
+/>
+</a></p><h2 class="floating"><strong>2 Städte – 1 Sender</strong></h2><p>Antenne Niedersachsen in Bremen auf 104.8 und in Bremerhaven auf 107.9. Dazu jeden Tag von 10 bis 15 Uhr euer  Programm aus unserem Bremer Sendestudio. Mit aktuellen Informationen und Hintergründen aus der Hansestadt. Außerdem: WERDER Live! Die Fußballshow. <a href="http://webradio.antenne.com/" class="popup-link" width="1115" height="715">Play now!</a></p>
+
+        </div>
+    </div>
+</div><div class="box-simple-540 box-article textbox">
+    <div class="box-simple-540 box-top"></div>
+    <div class="box-simple-540 box-bottom"></div>
+    <div class="box-simple-540-center">
+        <div class="box-content box-row padded textbox">
+            <p>
+
+<a href="http://player.antenne.com/HRA-80er/" class="popup-link" width="1115" height="715">
+<img
+    class="left"
+    
+    src="http://cdn.antenne.com/media/filer_thumbnails/2013/08/13/219x225-icon-80er.png__500x500_q80.png"
+/>
+</a></p><h2 class="floating"><strong>Antenne Niedersachsen - 80s</strong></h2><p>Haarspray raus, buntes Sakko an und Jackenärmel hochgekrempelt! Hier laufen die größten Pop-Hits der Achtziger!</p><p><a href="http://player.antenne.com/HRA-80er/" class="popup-link" width="1115" height="715">Play now</a></p>
+
+        </div>
+    </div>
+</div><div class="box-simple-540 box-article textbox">
+    <div class="box-simple-540 box-top"></div>
+    <div class="box-simple-540 box-bottom"></div>
+    <div class="box-simple-540-center">
+        <div class="box-content box-row padded textbox">
+            <p>
+
+<a href="http://player.antenne.com/HRA-top40/" class="popup-link" width="1115" height="715">
+<img
+    class="left"
+    
+    src="http://cdn.antenne.com/media/filer_thumbnails/2013/08/13/219x225-icon-top-40.png__500x500_q80.png"
+/>
+</a></p><h2 class="floating"><strong>Antenne Niedersachsen TOP 40</strong></h2><p>Die aktuellen Top-Hits aus den Charts. Rund um die Uhr hört ihr hier die erfolgreichsten Titel von Jetzt und Heute.</p><p><a href="http://player.antenne.com/HRA-top40/" class="popup-link" width="1115" height="715">Play now!</a></p>
+
+        </div>
+    </div>
+</div><div class="box-simple-540 box-article textbox">
+    <div class="box-simple-540 box-top"></div>
+    <div class="box-simple-540 box-bottom"></div>
+    <div class="box-simple-540-center">
+        <div class="box-content box-row padded textbox">
+            <p>
+
+<a href="http://player.antenne.com/HRA-crock/" class="popup-link" width="1115" height="715">
+<img
+    class="left"
+    
+    src="http://cdn.antenne.com/media/filer_thumbnails/2013/08/13/219x225-icon-classic.png__500x500_q80.png"
+/>
+</a></p><h2 class="floating"><strong>Antenne Niedersachsen - Classic Rock</strong></h2><p>Born to be wild? Live to rock? Dann ist das euer Kanal: Hier rockt das Haus und zwar "around the Clock".</p><p><a href="http://player.antenne.com/HRA-crock/" class="popup-link" width="1115" height="715">Play now</a></p>
+
+        </div>
+    </div>
+</div><div class="box-simple-540 box-article textbox">
+    <div class="box-simple-540 box-top"></div>
+    <div class="box-simple-540 box-bottom"></div>
+    <div class="box-simple-540-center">
+        <div class="box-content box-row padded textbox">
+            <p>
+
+<a href="http://player.antenne.com/HRA-oldies/" class="popup-link" width="1115" height="715">
+<img
+    class="left"
+    
+    src="http://cdn.antenne.com/media/filer_thumbnails/2013/08/13/219x225-icon-oldie.png__500x500_q80.png"
+/>
+</a></p><h2 class="floating"><strong>Antenne Niedersachsen - Oldies</strong></h2><p>Macht eine Zeitreise in eure musikalische Vergangenheit und genießt Melodien, die zu Evergreens wurden!</p><p><a href="http://player.antenne.com/HRA-oldies/" class="popup-link" width="1115" height="715">Play now</a></p>
+
+        </div>
+    </div>
+</div><div class="box-simple-540 box-article textbox">
+    <div class="box-simple-540 box-top"></div>
+    <div class="box-simple-540 box-bottom"></div>
+    <div class="box-simple-540-center">
+        <div class="box-content box-row padded textbox">
+            <h2>Probleme mit Antenne Niedersachsen Digital?</h2><p>Hier findet ihr die <span class="plugin_link"><a href="/on-air/webradio/faq-livestreams/">häufigsten Fragen und passenden Antworten</a></span> zu den Antenne Niedersachsen Livestreams.</p>
+
+        </div>
+    </div>
+</div>
+
+            </div>
+            <div class="slot-right">
+                
+    
+
+
+
+
+<div class="multiwidget"><div class="mw-update"><div class="mw-playing preview"><a href="/on-air/webradio/"><img class="mw-content-icon"src="http://cdn.antenne.com/media/artists/thumbs/pharrell_williams.jpg.36x36_q80_crop.jpg" alt="Bild von "/></a><div class="mw-content"><a href="http://webradio.antenne.com/" class="popup-link webradio" width="985" height="690" target="_blank"><img class="mw-playing-play" src="/site_media/static/img/antenne_webradio.gif"/></a><ul><li class="mw-playing-title">&nbsp;</li></ul><ul><li class="mw-playing-artist">&nbsp;</li></ul></div></div><div class="mw-news"><a href="/news-service/nachrichten/"><img class="mw-content-icon"  src="/site_media/static/img/multiwidget-news.png"/></a><div class="mw-content"><a class="line active" href="/news-service/nachrichten/">
+            
+                Bundestag berät über Senkung des Krankenkassenbeitrags
+            
+            </a><a class="line " href="/news-service/nachrichten/">
+            
+                Ministerpräsident Weil trifft sich mit dem türkischen Reg&hellip;
+            
+            </a><a class="line " href="/news-service/nachrichten/">
+            
+                Silvio Berlusconi tritt Sozialdienst an
+            
+            </a></div></div></div><div class="mw-weather"><a href="/news-service/wetter/"><img class="mw-content-icon" src="/site_media/static/img/ant-weather-symbol-large-white-6.png"/></a><div class="mw-content"><span class="mw-weather-temp">14ºC</span><span class="mw-weather-label">Regen</span><a class="mw-weather-more" href="/news-service/wetter/">Mehr Wetter für eure Region</a></div></div><div class="mw-traffic"><a href="/news-service/verkehrszentrum/"><img class="mw-content-icon" src="/site_media/static/img/ant-multiwidget-jam.png"/></a><div class="mw-content"><span class="mw-traffic-num">15</span><span class="mw-traffic-label"><a href="/news-service/verkehrszentrum/">Meldungen</a></span><span class="mw-traffic-num next" >4</span><span class="mw-traffic-label"><a href="/news-service/verkehrszentrum/">Blitzer</a></span></div></div><div class="mw-schedule"><a href="/on-air/webcam/"><img class="mw-content-icon" src="/site_media/static/img/ant-multiwidget-webcam.jpg" width="39" height="39" /></a><div class="mw-content"><span class="mw-schedule-name"><a href="">Hakan "Haxi" Turan</a></span><span class="mw-schedule-message"><a href="">...begleitet euch durch den Mittag.</a></span></div></div></div><div class="multiwidget-footer"></div>
+
+
+<script>
+    function fade_news(){
+        var lines = $('.mw-news .line'),
+            active = $('.mw-news .line.active'),
+            next = active.next();
+
+        if(next.length == 0) {
+            next = $('.mw-news .line').first();
+        }
+
+        active.fadeOut('slow', function(){
+            active.removeClass('active');
+            next.fadeIn('slow').addClass('active');
+        });
+
+        setTimeout(fade_news, 7000);
+    }
+
+    function update_playlist(){
+        $.get("/schedulebox/songbox/",function(data) {
+            $('.mw-update').replaceWith(data);
+            $(".mw-playing .scroll").simplyScroll();
+        });
+
+        setTimeout(update_playlist, 60*3*1000);
+        return false;
+    };
+
+    update_playlist();
+    fade_news();
+</script>
+
+
+
+
+
+
+<!-- Open Air 2013 -->
+<div class="promotion-teaser-wide">
+    
+    <div class="promotion-bg"  ><img src="http://cdn.antenne.com/media/promotion/Antenne_OpenAir_Medium-content-teaser.jpg" /></div>
+    <div class="promotion-border"><a href="/on-air/aktionen-und-events/events/open-air/antenne-niedersachsen-open-air-2013/"></a></div>
+
+        <div class="promotion-editorial">
+            
+            <div class="promotion-editorial-content text-only">
+            
+            
+            
+            </div>
+        </div>
+
+    
+</div>
+
+
+
+
+<div class="box-300">
+
+    <h2 class="box-headline">Stars bei Antenne Niedersachsen</h2>
+
+    <div class="box-simple-300 ">
+        <div class="box-simple-300 box-top"></div>
+        <div class="box-simple-300 box-bottom"></div>
+        <div class="box-simple-300-center">
+            <div class="box-beige">
+                <div class="box-beige-300 box-top"></div>
+                <div class="box-beige-300 box-bottom"></div>
+                <div class="box-content">
+                    
+
+<div class="box__38" tabname="Stars zu Gast - Artikel rechts">
+    
+    
+        <span class="list-item large">
+            
+            
+                
+            
+            <div class="frame"><a href="/on-air/stargaeste/rixton-zu-gast-bei-antenne-niedersachsen/"><img src="http://cdn.antenne.com/media/filer_thumbnails/2014/04/17/rixton_zu_gast_bei_antenne_niedersachsen_-_12.jpg__80x53_q80_crop.jpg" /></a></div>
+            
+            
+                <span class="item-name"><a href="/on-air/stargaeste/rixton-zu-gast-bei-antenne-niedersachsen/">
+                    Rixton zu Gast bei Kaya
+                </a></span>
+            
+        </span>
+    
+        <span class="list-item large">
+            
+            
+                
+            
+            <div class="frame"><a href="/on-air/stargaeste/milow-live-und-unplugged-bei-antenne-niedersachsen/"><img src="http://cdn.antenne.com/media/filer_thumbnails/2014/04/07/wenke-milow_530_300.jpg__80x53_q80_crop.jpg" /></a></div>
+            
+            
+                <span class="item-name"><a href="/on-air/stargaeste/milow-live-und-unplugged-bei-antenne-niedersachsen/">
+                    Milow spielt live bei Antenne Niedersachsen
+                </a></span>
+            
+        </span>
+    
+        <span class="list-item large">
+            
+            
+                
+            
+            <div class="frame"><a href="/on-air/stargaeste/mighty-oaks/"><img src="http://cdn.antenne.com/media/filer_thumbnails/2014/03/05/mighty_oaks_530_300.jpg__80x53_q80_crop.jpg" /></a></div>
+            
+            
+                <span class="item-name"><a href="/on-air/stargaeste/mighty-oaks/">
+                    &quot;Mighty Oaks&quot; live und unplugged bei Antenne Niedersachsen
+                </a></span>
+            
+        </span>
+    
+        <span class="list-item large">
+            
+            
+                
+            
+            <div class="frame"><a href="/on-air/stargaeste/soehne-mannheims/"><img src="http://cdn.antenne.com/media/filer_thumbnails/2014/02/20/die_sohne_mannheims_bei_antenne_niedersachsen_art.jpg__80x53_q80_crop.jpg" /></a></div>
+            
+            
+                <span class="item-name"><a href="/on-air/stargaeste/soehne-mannheims/">
+                    Die Söhne Mannheims unplugged bei Antenne Niedersachsen
+                </a></span>
+            
+        </span>
+    
+        <span class="list-item large">
+            
+            
+                
+            
+            <div class="frame"><a href="/morgenshow/aus-der-moin-show/14-01/horst-lichter-zu-gast/"><img src="http://cdn.antenne.com/media/filer_thumbnails/2014/01/31/horst_lichter_zu_gast_bei_wenke_-_12.jpg__80x53_q80_crop.jpg" /></a></div>
+            
+            
+                <span class="item-name"><a href="/morgenshow/aus-der-moin-show/14-01/horst-lichter-zu-gast/">
+                    Glückwunsch zur Goldenen Kamera, Horst Lichter!
+                </a></span>
+            
+        </span>
+    
+    
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Musik-Quiz -->
+<div class="promotion-teaser-wide">
+    
+    <div class="promotion-bg"  ><img src="http://cdn.antenne.com/media/promotion/Musik-Quiz_medium.gif" /></div>
+    <div class="promotion-border"><a href="/on-air/aktionen-und-events/aktionen/musik-quiz/"></a></div>
+
+        <div class="promotion-editorial">
+            
+            <div class="promotion-editorial-content text-only">
+            
+            
+            
+            </div>
+        </div>
+
+    
+</div>
+
+
+
+
+<div class="box-300">
+
+    <h2 class="box-headline">Promi-Videos</h2>
+
+    <div class="box-simple-300 ">
+        <div class="box-simple-300 box-top"></div>
+        <div class="box-simple-300 box-bottom"></div>
+        <div class="box-simple-300-center">
+            <div class="box-beige">
+                <div class="box-beige-300 box-top"></div>
+                <div class="box-beige-300 box-bottom"></div>
+                <div class="box-content">
+                    
+<div class="snippet__62 tab_box" tabname="Videowidget A (Promi-Videos)">
+
+   <script src="/site_media/static/oms/bcw_rightboxa.js" type="text/javascript" charset="UTF-8"></script>
+
+<script type="text/javascript">
+	bc_widget_rightboxa({'token':'fyZwIiWJThPVXD0tIve63NzSSJlPd9KFBDFkdI8cQOKu1on2p5molA..', 'url':'/videocenter', 'dir':'/site_media/static/oms/bcw_rightboxa', 'postfix':'', 'width':270, 'playerIds':[85490004001], 'playlistIds':[85341790001], 'TsTabs':['Promi-News']});
+</script>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Konzertkalender -->
+<div class="promotion-teaser-wide">
+    
+    <div class="promotion-bg"  ><img src="http://cdn.antenne.com/media/promotion/Konzertkalender_medium_1.gif" /></div>
+    <div class="promotion-border"><a href="/news-service/service/konzertkalender/"></a></div>
+
+        <div class="promotion-editorial">
+            
+            <div class="promotion-editorial-content text-only">
+            
+            
+            
+            </div>
+        </div>
+
+    
+</div>
+
+
+
+
+<script>
+var rmsi_site ="rmsi.antenne.com";
+var rmsi_zone ="musik";
+</script>
+<script type="text/javascript" src="http://cdn.antenne.com/media/filer/2014/02/28/rms_omsvjs14_1.js"></script>
+<script>
+try
+   {
+  var ystr="";
+  var y_adj="";
+
+for (var id in yl.YpResult.getAll()) {
+
+c = yl.YpResult.get(id);
+ystr+= ';y_ad='+c.id;
+ if(c.format){
+ y_adj=';y_adj='+c.format;
+	}
+}
+ystr+=y_adj+';'; 
+WLRCMD=WLRCMD+ystr+segQS+crtg_content;
+ }
+catch(err)
+   {}
+</script>
+
+<div style="display:inline-block;width:300px;height:250px;background-color:#ffffff;">
+<script language="JavaScript">
+   if(typeof(WLRCMD)=="undefined"){var WLRCMD="";}
+   if(typeof(rmsi_random)=="undefined"){var rmsi_random=Math.floor(Math.random()*10000000000)}
+   document.write('<scr'+'ipt language="JavaScript" src="http://ad.de.doubleclick.net/adj/rmsi.antenne.com/musik;rmsi=musik;nielsen=1;'+WLRCMD+';sz=300x250;tile=3;ord='+rmsi_random+'?"><\/scr'+'ipt>');
+</script><noscript>
+<a href="http://ad.de.doubleclick.net/jump/rmsi.antenne.com/musik;rmsi=musik;nielsen=1;sz=300x250;tile=3;ord=68013215279?" target="_blank">
+<img src="http://ad.de.doubleclick.net/ad/rmsi.antenne.com/musik;rmsi=musik;nielsen=1;sz=300x250;tile=3;ord=68013215279?" border="0" width="300" height="250">
+</a></noscript>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    registerTabs();
+    </script>
+
+    
+    <div id="footer">
+        <div class="wrapper">
+            <div class="slot-footer">
+                <strong>Antenne Niedersachsen</strong>
+                <a href="/sender/kontakt/">Kontakt</a><br />
+                <a href="/sender/team/">Unser Team</a><br />
+                <a href="/sender/frequenzen/">Frequenzen</a><br />
+                <a href="/news-service/studios/">Regionalstudios</a><br />
+                <a href="/mediadaten/">Werbung: Mediadaten</a><br />
+                <a href="/sender/jobs-praktika/">Jobs &amp; Praktika</a><br />
+                <a href="/sender/antenne-fuer-kinder/">Antenne hilft e.V.</a><br />
+            </div>
+            <div class="slot-footer">
+                <strong>On Air</strong>
+                <a href="/morgenshow/">&quot;Moin-Show&quot;</a><br />
+                <a href="/on-air/aktionen-und-events/">Aktionen &amp; Events</a><br />
+                <a href="/on-air/die-moderatoren/">Moderatoren</a><br />
+                <a href="/on-air/comedy">Comedy</a><br />
+                <a href="/on-air/mediathek/">Mediathek</a><br />
+                <a href="/on-air/webradio/">Webradio</a><br />
+            </div>
+            <div class="slot-footer">
+                <strong>News &amp; Service</strong>
+                <a href="/news-service/nachrichten/">Nachrichten</a><br />
+                <a href="/news-service/wetter/">Wetter</a><br />
+                <a href="/news-service/verkehrszentrum/">Verkehr</a><br />
+                <a href="/news-service/veranstaltungskalender/">Veranstaltungskalender</a><br />
+                <a href="http://www.vereintes-niedersachsen.de">Vereine in Niedersachsen</a><br />
+                <a href="/news-service/jobportal/">Job-Portal</a><br />
+            </div>
+            <div class="slot-footer">
+                <strong>antenne.com</strong>
+                <a rel="nofollow" href="/ueber-uns/impressum/">Impressum</a><br />
+                <a rel="nofollow" href="/ueber-uns/datenschutzerklaerung/">Datenschutzerklaerung</a><br />
+                <a rel="nofollow" href="/ueber-uns/nutzungsbedingungen/">Nutzungsbedingungen</a><br />
+                <a rel="nofollow" href="/ueber-uns/teilnahmebedingungen/">AGBs für Gewinnspiele</a><br />
+                <a rel="nofollow" href="http://www.oms.eu/cms/nutzungsbasierte-online-werbung.html">Nutzungsbasierte Onlinewerbung</a><br />
+                <a href="http://www.kono.de">Realisiert durch KONO</a><br />
+            </div>
+        </div>
+        <div class="wrapper logos">
+            <h3>Unsere Medienpartner:</h3>
+            <a rel="nofollow" href="http://www.vfl-wolfsburg.de" target="_blank" class="logo-wolfsburg"></a>
+            <a rel="nofollow" href="http://www.handball-hannover.de/" target="_blank" class="logo-tsv"></a>
+            <a rel="nofollow" href="http://www.newyorkerphantoms.de/" target="_blank" class="logo-phantoms"></a>
+            <a rel="nofollow" href="http://www.vfb-oldenburg.de/" target="_blank" class="logo-vfb"></a>
+        </div>
+    </div>
+    
+
+
+<div id="loader"><img src="http://cdn.antenne.com/static/img/ant-loader.gif" alt="bitte warten" /></div>
+
+
+
+<!-- SZM VERSION="1.5" -->
+<script type="text/javascript">
+<!--
+var IVW="http://antencom.ivwbox.de/cgi-bin/ivw/CP/webradio";
+document.write("<img src=\""+IVW+"?r="+escape(document.referrer)+"&d="+(Math.random()*100000)+"\" width=\"1\" height=\"1\" alt=\"szmtag\" />");
+//-->
+</script>
+<noscript><img src="http://antencom.ivwbox.de/cgi-bin/ivw/CP/webradio" width="1" height="1" alt="szmtag" /></noscript>
+<!-- /SZM -->
+
+<!-- SZM VERSION="2.0" -->
+<script type="text/javascript">
+var IVW_CP = "webradio";
+var iam_data = {
+"st":"antencom",
+"cp":"webradio",
+"sv":"in",
+"co":"kommentar"
+}
+iom.c(iam_data);
+</script>
+<!--/SZM -->
+
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2427843-1']);
+    _gaq.push(['_gat._anonymizeIp']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<div id="ads">
+    <div id="ad-wrapper">
+        <div id="ad-super">
+    
+
+
+<style>
+  #adl_sb_table{
+  width:910px;
+  position:relative;
+  left:-180px;
+    }
+</style>
+<script language="JavaScript">
+adlWallPaperLeft=940;
+     if(typeof(WLRCMD)=="undefined"){var WLRCMD="";}
+   if(typeof(rmsi_random)=="undefined"){var rmsi_random=Math.floor(Math.random()*10000000000)}
+   document.write('<scr'+'ipt language="JavaScript" src="http://ad.de.doubleclick.net/adj/rmsi.antenne.com/musik;rmsi=musik;nielsen=1;dcopt=ist;'+WLRCMD+';sz=728x90;tile=1;ord='+rmsi_random+'?"><\/scr'+'ipt>');
+</script><noscript>
+<a href="http://ad.de.doubleclick.net/jump/rmsi.antenne.com/musik;rmsi=musik;nielsen=1;sz=728x90;tile=1;ord=68013215279?" target="_blank">
+<img src="http://ad.de.doubleclick.net/ad/rmsi.antenne.com/musik;rmsi=musik;nielsen=1;sz=728x90;tile=1;ord=68013215279?" border="0" width="728" height="90">
+</a></noscript>
+
+</div>
+        <div id="ad-sky">
+    
+
+
+<script language="JavaScript">
+   if(typeof(WLRCMD)=="undefined"){var WLRCMD="";}
+   if(typeof(rmsi_random)=="undefined"){var rmsi_random=Math.floor(Math.random()*10000000000)}
+   document.write('<scr'+'ipt language="JavaScript" src="http://ad.de.doubleclick.net/adj/rmsi.antenne.com/musik;rmsi=musik;nielsen=1;'+WLRCMD+';sz=120x600;tile=2;ord='+rmsi_random+'?"><\/scr'+'ipt>');
+</script><noscript>
+<a href="http://ad.de.doubleclick.net/jump/rmsi.antenne.com/musik;rmsi=musik;nielsen=1;sz=120x600;tile=2;ord=68013215279?" target="_blank">
+<img src="http://ad.de.doubleclick.net/ad/rmsi.antenne.com/musik;rmsi=musik;nielsen=1;sz=120x600;tile=2;ord=68013215279?" border="0" width="120" height="600">
+</a></noscript>
+
+</div>
+        <div id="ad-floating">
+
+</div>
+    </div>
+</div>
+<div id="message-background"></div>
+
+
+    
+</body>
+</html>
