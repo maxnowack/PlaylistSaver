@@ -12,7 +12,7 @@ namespace PlaylistSaver.Radio.Njoy
     public class NjoySaver : IPlaylistSaver
     {
         public string Name { get { return "N-Joy"; } }
-        public TimeSpan DefaultInterval { get { return TimeSpan.FromMinutes(5); } }
+        public TimeSpan DefaultInterval { get { return TimeSpan.FromMinutes(10); } }
         public static IPlaylistSaver Create()
         {
             return new NjoySaver();
