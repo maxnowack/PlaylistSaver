@@ -29,7 +29,28 @@ namespace PlaylistSaver.Radio.Njoy
 
         public List<PlaylistEntry> GetEntrys(DateTime time)
         {
-            throw new NotImplementedException();
+            var doc = CQ.CreateFromUrl(
+                        string.Format(
+                            "http://www.n-joy.de/radio/titelsuche115.html?date={0:yyyy-MM-dd}&time={0:HH}%3A{0:mm}&search_submit=1",
+                            time));
+
+            var retVal = new List<PlaylistEntry>();
+
+            var items = doc["table[summary='Programm'] tbody tr"].ToList();
+            foreach (var item in items)
+            {
+                var tds = CQ.Create(item.InnerHTML)["td"];
+                if(!tds.Any()) continue;
+
+                retVal.Add(new PlaylistEntry()
+                {
+                    Radio = this.Name,
+                    Time = DateTime.Parse(string.Format("{0:yyyy-MM-dd} {1}",time,tds[0].InnerText)),
+                    Artist = tds[1].InnerText,
+                    Title = tds[2].InnerText
+                });
+            }
+            return retVal;
         }
     }
 }
