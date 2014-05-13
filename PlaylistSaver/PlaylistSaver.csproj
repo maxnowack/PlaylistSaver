@@ -57,6 +57,10 @@
       <Project>{5a0c4f78-7759-48fe-acc6-6de99d371487}</Project>
       <Name>PlaylistSaver.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.890Rtl\PlaylistSaver.Radio.890Rtl.csproj">
+      <Project>{f268b93c-9115-47d8-86f9-f1718b9ff2e1}</Project>
+      <Name>PlaylistSaver.Radio.890Rtl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlaylistSaver.Radio.Antenne\PlaylistSaver.Radio.Antenne.csproj">
       <Project>{d4fdebfa-0a1f-447f-8240-b1037bc828a9}</Project>
       <Name>PlaylistSaver.Radio.Antenne</Name>
@@ -68,6 +72,10 @@
     <ProjectReference Include="..\PlaylistSaver.Radio.Njoy\PlaylistSaver.Radio.Njoy.csproj">
       <Project>{2d3d327d-0f8d-438d-9276-1c23924c2599}</Project>
       <Name>PlaylistSaver.Radio.Njoy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Planet\PlaylistSaver.Radio.Planet.csproj">
+      <Project>{994120a6-44f5-4010-9b6a-fb9e762d497a}</Project>
+      <Name>PlaylistSaver.Radio.Planet</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlaylistSaver.Storage.NDatabase\PlaylistSaver.Storage.NDatabase.csproj">
       <Project>{6b89ad01-55c9-412d-bec9-9e9fa19d5804}</Project>
