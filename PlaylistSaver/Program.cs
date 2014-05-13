@@ -26,12 +26,18 @@ namespace PlaylistSaver
             var instances = Factory<IPlaylistSaver>.CreateInstanceList().ToList();
             var storage = Factory<IPlaylistStorage>.CreateInstance();
             var entries = new List<PlaylistEntry>();
+
+            var startTime = DateTime.Now;
+
             foreach (var playlistSaver in instances)
             {
                 var times = new List<DateTime>();
                 try
                 {
-                    times = playlistSaver.GetAvailableTimes().GetTimesForInterval(playlistSaver.DefaultInterval);
+                    var availTimes = playlistSaver.GetAvailableTimes();
+                    if (Properties.Settings.Default.LastRun > availTimes.Start) availTimes.Start = Properties.Settings.Default.LastRun;
+
+                    times = availTimes.GetTimesForInterval(playlistSaver.DefaultInterval);
                 }
                 catch (NotImplementedException nie)
                 {
@@ -55,6 +61,8 @@ namespace PlaylistSaver
                     }
                 }
             }
+            Properties.Settings.Default.LastRun = startTime;
+            Properties.Settings.Default.Save();
 
             var unique = entries.Distinct().ToList();
             if(storage!=null) storage.Store(unique);
