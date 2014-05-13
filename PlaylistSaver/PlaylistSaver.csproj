@@ -78,6 +78,10 @@
       <Project>{5f7a45d1-c179-4695-bec4-f383e4887dda}</Project>
       <Name>PlaylistSaver.Radio.Ffn</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Hr1\PlaylistSaver.Radio.Hr1.csproj">
+      <Project>{76c228c1-bee9-46e5-8f1e-a90d5641a14b}</Project>
+      <Name>PlaylistSaver.Radio.Hr1</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlaylistSaver.Radio.Njoy\PlaylistSaver.Radio.Njoy.csproj">
       <Project>{2d3d327d-0f8d-438d-9276-1c23924c2599}</Project>
       <Name>PlaylistSaver.Radio.Njoy</Name>
