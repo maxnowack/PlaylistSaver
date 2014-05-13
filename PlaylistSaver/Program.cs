@@ -24,6 +24,7 @@ namespace PlaylistSaver
             //LoadAdditionalAssemblies();
 
             var instances = Factory<IPlaylistSaver>.CreateInstanceList().ToList();
+            var storage = Factory<IPlaylistStorage>.CreateInstance();
             var entries = new List<PlaylistEntry>();
             foreach (var playlistSaver in instances)
             {
@@ -55,12 +56,9 @@ namespace PlaylistSaver
                 }
             }
 
-            var unique = entries.Distinct();
+            var unique = entries.Distinct().ToList();
+            if(storage!=null) storage.Store(unique);
 
-
-
-            Console.WriteLine("{0}/{1}", unique.Count(), entries.Count());
-            Console.ReadLine();
         } 
     }
 }
