@@ -19,6 +19,11 @@ namespace PlaylistSaver.Radio.Planet
             get { return TimeSpan.FromMinutes(10); }
         }
 
+        public static IPlaylistSaver Create()
+        {
+            return new PlanetSaver();
+        }
+
         public StartEndSpan GetAvailableTimes()
         {
             throw new NotImplementedException();
