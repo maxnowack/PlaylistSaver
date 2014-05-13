@@ -18,14 +18,7 @@ namespace PlaylistSaver
         /// <returns>List of instances of T</returns>
         public static IEnumerable<T> CreateInstanceList(object[] args = null)
         {
-            var instanceList = new List<T>();
-            foreach (var method in GetMethods(args))
-            {
-                var instance = method.Invoke(null, args) as T;
-                if (instance != null)
-                    instanceList.Add(instance);
-            }
-            return instanceList;
+            return GetMethods(args).Select(method => method.Invoke(null, args)).OfType<T>().ToList();
         }
 
         /// <summary>
@@ -35,13 +28,7 @@ namespace PlaylistSaver
         /// <returns>Instance of T</returns>
         public static T CreateInstance(object[] args = null)
         {
-            foreach (var method in GetMethods(args))
-            {
-                var instance = method.Invoke(null, args) as T;
-                if (instance != null)
-                    return instance;
-            }
-            return default(T);
+            return GetMethods(args).Select(method => method.Invoke(null, args)).OfType<T>().FirstOrDefault();
         }
 
         /// <summary>
@@ -89,12 +76,7 @@ namespace PlaylistSaver
                 return false;
 
             var parameters = method.GetParameters();
-            foreach (var param in parameters.OrderBy(p => p.Position))
-            {
-                if (!param.ParameterType.Equals(args[param.Position].GetType()))
-                    return false;
-            }
-            return true;
+            return parameters.OrderBy(p => p.Position).All(param => param.ParameterType == args[param.Position].GetType());
         }
     }
 }

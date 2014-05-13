@@ -6,6 +6,8 @@ using System.Reflection;
 
 namespace PlaylistSaver
 {
+    using System.Linq;
+
     /// <summary>
     /// Method cache for Factory
     /// </summary>
@@ -29,18 +31,16 @@ namespace PlaylistSaver
                 return;
             if (_collectedTypes == null)
                 _collectedTypes = new List<Type>();
-            foreach (var t in types)
+            foreach (var t in types.Where(t => !_collectedTypes.Contains(t)))
             {
-                if (!_collectedTypes.Contains(t))
-                    _collectedTypes.Add(t);
+                _collectedTypes.Add(t);
             }
         }
 
         public static void AddTypes(IEnumerable<Assembly> assemblies)
         {
-            foreach (var a in assemblies)
+            foreach (var typen in assemblies.Select(a => a.GetTypes()))
             {
-                var typen = a.GetTypes();
                 AddTypes(typen);
             }
         }
@@ -55,10 +55,9 @@ namespace PlaylistSaver
                 if (string.IsNullOrEmpty(path))
                     return;
                 Debug.WriteLine("Factory path: " + path);
-                foreach (var file in Directory.GetFiles(path, "*.dll"))
+                foreach (var file in Directory.GetFiles(path, "*.dll").Where(file => pd.GetAssembly(file) != null))
                 {
-                    if (pd.GetAssembly(file) != null)
-                        _collectedTypes.AddRange(pd.GetAssembly(file).GetTypes());
+                    _collectedTypes.AddRange(pd.GetAssembly(file).GetTypes());
                 }
             }
             catch (Exception e)
