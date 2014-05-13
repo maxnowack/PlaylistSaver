@@ -33,5 +33,10 @@ namespace PlaylistSaver.Core
             if (obj.GetType() != GetType()) return false;
             return Equals((PlaylistEntry) obj);
         }
+
+        public override string ToString()
+        {
+            return string.Format("{1} - {2} at {3:yyyy-MM-dd HH:mm} {0}", Radio, Artist, Title, Time);
+        }
     }
 }
