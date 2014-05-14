@@ -66,13 +66,29 @@
       <Project>{5a0c4f78-7759-48fe-acc6-6de99d371487}</Project>
       <Name>PlaylistSaver.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.1Live\PlaylistSaver.Radio.1Live.csproj">
+      <Project>{75906af1-35a6-4c37-8847-c66498727c8a}</Project>
+      <Name>PlaylistSaver.Radio.1Live</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlaylistSaver.Radio.890Rtl\PlaylistSaver.Radio.890Rtl.csproj">
       <Project>{f268b93c-9115-47d8-86f9-f1718b9ff2e1}</Project>
       <Name>PlaylistSaver.Radio.890Rtl</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.AntenneBayern\PlaylistSaver.Radio.AntenneBayern.csproj">
+      <Project>{ae38623b-0038-4d2b-ae92-16bd6b0c6f3a}</Project>
+      <Name>PlaylistSaver.Radio.AntenneBayern</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlaylistSaver.Radio.Antenne\PlaylistSaver.Radio.Antenne.csproj">
       <Project>{d4fdebfa-0a1f-447f-8240-b1037bc828a9}</Project>
       <Name>PlaylistSaver.Radio.Antenne</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Bayern1\PlaylistSaver.Radio.Bayern1.csproj">
+      <Project>{a99c208a-8e28-4b2c-8dc4-a96db586fb22}</Project>
+      <Name>PlaylistSaver.Radio.Bayern1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.BremenEins\PlaylistSaver.Radio.BremenEins.csproj">
+      <Project>{eb018f77-572f-47d9-ac04-fb2e7efbdcdb}</Project>
+      <Name>PlaylistSaver.Radio.BremenEins</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlaylistSaver.Radio.Ffn\PlaylistSaver.Radio.Ffn.csproj">
       <Project>{5f7a45d1-c179-4695-bec4-f383e4887dda}</Project>
@@ -82,6 +98,38 @@
       <Project>{76c228c1-bee9-46e5-8f1e-a90d5641a14b}</Project>
       <Name>PlaylistSaver.Radio.Hr1</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Hr2\PlaylistSaver.Radio.Hr2.csproj">
+      <Project>{a0108bd1-c398-4105-a6eb-7ecc5e39133e}</Project>
+      <Name>PlaylistSaver.Radio.Hr2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Hr3\PlaylistSaver.Radio.Hr3.csproj">
+      <Project>{24ba2806-70ad-4795-9fc3-114eb1fd1033}</Project>
+      <Name>PlaylistSaver.Radio.Hr3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Hr4\PlaylistSaver.Radio.Hr4.csproj">
+      <Project>{2c05bb29-3ecc-4abb-9ebc-ccd70f80dde3}</Project>
+      <Name>PlaylistSaver.Radio.Hr4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Jump\PlaylistSaver.Radio.Jump.csproj">
+      <Project>{b43c6686-8082-48f2-9cd8-f5554de93187}</Project>
+      <Name>PlaylistSaver.Radio.Jump</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.KissFm\PlaylistSaver.Radio.KissFm.csproj">
+      <Project>{15999bea-4e2a-47ba-8404-e11371a83912}</Project>
+      <Name>PlaylistSaver.Radio.KissFm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Ndr1\PlaylistSaver.Radio.Ndr1.csproj">
+      <Project>{2b700542-bdd0-4366-b899-d656ad469f9d}</Project>
+      <Name>PlaylistSaver.Radio.Ndr1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Ndr2\PlaylistSaver.Radio.Ndr2.csproj">
+      <Project>{bab2c1b4-8346-4635-b96a-4908c3f4c8c2}</Project>
+      <Name>PlaylistSaver.Radio.Ndr2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.NjoyPb\PlaylistSaver.Radio.NjoyPb.csproj">
+      <Project>{ad0831ce-8827-4515-8d64-cbc6f3400833}</Project>
+      <Name>PlaylistSaver.Radio.NjoyPb</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlaylistSaver.Radio.Njoy\PlaylistSaver.Radio.Njoy.csproj">
       <Project>{2d3d327d-0f8d-438d-9276-1c23924c2599}</Project>
       <Name>PlaylistSaver.Radio.Njoy</Name>
@@ -89,6 +137,34 @@
     <ProjectReference Include="..\PlaylistSaver.Radio.Planet\PlaylistSaver.Radio.Planet.csproj">
       <Project>{994120a6-44f5-4010-9b6a-fb9e762d497a}</Project>
       <Name>PlaylistSaver.Radio.Planet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Radioeins\PlaylistSaver.Radio.Radioeins.csproj">
+      <Project>{0f586fc0-7f0d-43f4-a44b-0b98efde9c7d}</Project>
+      <Name>PlaylistSaver.Radio.Radioeins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.RadioHamburg\PlaylistSaver.Radio.RadioHamburg.csproj">
+      <Project>{4f587c9f-9611-4dec-8a23-5296478bdcde}</Project>
+      <Name>PlaylistSaver.Radio.RadioHamburg</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.SunshineLive\PlaylistSaver.Radio.SunshineLive.csproj">
+      <Project>{8718944a-302b-4679-98ed-0c5966f21547}</Project>
+      <Name>PlaylistSaver.Radio.SunshineLive</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Swr3\PlaylistSaver.Radio.Swr3.csproj">
+      <Project>{41f88d0a-c856-4a26-ad6b-3722039dda29}</Project>
+      <Name>PlaylistSaver.Radio.Swr3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.WDR2\PlaylistSaver.Radio.WDR2.csproj">
+      <Project>{2145a838-3e79-4f63-bc9e-67126f24dc79}</Project>
+      <Name>PlaylistSaver.Radio.WDR2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Wdr4Saver\PlaylistSaver.Radio.Wdr4Saver.csproj">
+      <Project>{76a36fd6-32f4-4efc-8354-40cb515281be}</Project>
+      <Name>PlaylistSaver.Radio.Wdr4Saver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.YouFm\PlaylistSaver.Radio.YouFm.csproj">
+      <Project>{9b8d557f-993a-4814-a2bc-e032663be085}</Project>
+      <Name>PlaylistSaver.Radio.YouFm</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlaylistSaver.Storage.NDatabase\PlaylistSaver.Storage.NDatabase.csproj">
       <Project>{6b89ad01-55c9-412d-bec9-9e9fa19d5804}</Project>
