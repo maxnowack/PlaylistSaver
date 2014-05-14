@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2D3D327D-0F8D-438D-9276-1C23924C2599}</ProjectGuid>
+    <ProjectGuid>{AD0831CE-8827-4515-8D64-CBC6F3400833}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PlaylistSaver.Radio.Njoy</RootNamespace>
-    <AssemblyName>PlaylistSaver.Radio.Njoy</AssemblyName>
+    <RootNamespace>PlaylistSaver.Radio.NjoyPb</RootNamespace>
+    <AssemblyName>PlaylistSaver.Radio.NjoyPb</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CsQuery">
-      <HintPath>..\packages\CsQuery.1.3.4\lib\net40\CsQuery.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NjoySaver.cs" />
+    <Compile Include="NjoyPbSaver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -52,13 +49,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlaylistSaver.Core\PlaylistSaver.Core.csproj">
-      <Project>{5a0c4f78-7759-48fe-acc6-6de99d371487}</Project>
+      <Project>{5A0C4F78-7759-48FE-ACC6-6DE99D371487}</Project>
       <Name>PlaylistSaver.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Helpers.Playlistbase\PlaylistSaver.Radio.Helpers.Playlistbase.csproj">
+      <Project>{D5E8E676-F18F-4E35-A9CD-FC63C4E2F060}</Project>
+      <Name>PlaylistSaver.Radio.Helpers.Playlistbase</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
