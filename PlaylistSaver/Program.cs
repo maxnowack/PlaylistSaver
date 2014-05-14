@@ -49,7 +49,7 @@ namespace PlaylistSaver
                 }
                 catch (Exception e)
                 {
-                    Debug.WriteLine("cannot get available times for {0}", playlistSaver.Name);
+                    Debug.WriteLine(e);
                 }
 
                 foreach (var dateTime in times)
@@ -62,17 +62,17 @@ namespace PlaylistSaver
                     catch (WebException we)
                     {
                         Debug.WriteLine(we);
+                        break;
                     }
                     catch (NotImplementedException nie)
                     {
                         Debug.WriteLine(nie);
+                        break;
                     }
                     catch (Exception e)
                     {
-                        Debug.WriteLine(
-                            "cannot get entries in {1:yyyy-MM-dd HH:mm} for {0}",
-                            playlistSaver.Name,
-                            dateTime);
+                        Debug.WriteLine(e);
+                        break;
                     }
                 }
             }
