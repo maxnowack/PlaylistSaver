@@ -30,5 +30,17 @@ namespace PlaylistSaver.Storage.NDatabase
                 }
             }
         }
+
+
+        public DateTime GetLastEntry(string stationKey)
+        {
+            using (var odb = OdbFactory.Open(DbFileName))
+            {
+                return (from e in odb.QueryAndExecute<PlaylistEntry>()
+                        where e.Radio == stationKey
+                        orderby e.Time descending
+                        select e.Time).FirstOrDefault();
+            }
+        }
     }
 }

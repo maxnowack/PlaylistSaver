@@ -25,9 +25,6 @@ namespace PlaylistSaver
 
             var instances = Factory<IPlaylistSaver>.CreateInstanceList().ToList();
             var storage = Factory<IPlaylistStorage>.CreateInstance();
-            var entries = new List<PlaylistEntry>();
-
-            var startTime = DateTime.Now;
 
             foreach (var playlistSaver in instances)
             {
@@ -35,7 +32,14 @@ namespace PlaylistSaver
                 try
                 {
                     var availTimes = playlistSaver.GetAvailableTimes();
-                    if (Properties.Settings.Default.LastRun > availTimes.Start) availTimes.Start = Properties.Settings.Default.LastRun;
+                    try
+                    {
+                        var lastRun = storage.GetLastEntry(playlistSaver.Name);
+                        if(lastRun!=null && lastRun!=DateTime.MinValue) availTimes.Start = lastRun;
+                    }
+                    catch
+                    {
+                    }
 
                     times = availTimes.GetTimesForInterval(playlistSaver.DefaultInterval);
                 }
@@ -53,7 +57,7 @@ namespace PlaylistSaver
                     Console.WriteLine("{0}: {1:yyyy-MM-dd HH:mm}", playlistSaver.Name, dateTime);
                     try
                     {
-                        entries.AddRange(playlistSaver.GetEntrys(dateTime));
+                        storage.Store(playlistSaver.GetEntrys(dateTime));
                     }
                     catch (WebException we)
                     {
@@ -72,12 +76,6 @@ namespace PlaylistSaver
                     }
                 }
             }
-            Properties.Settings.Default.LastRun = startTime;
-            Properties.Settings.Default.Save();
-
-            var unique = entries.Distinct().ToList();
-            if(storage!=null) storage.Store(unique);
-
         } 
     }
 }
