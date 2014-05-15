@@ -39,7 +39,7 @@ namespace PlaylistSaver.Storage.NHibernate
         {
             using (var transaction = session.BeginTransaction())
             {
-                foreach (var playlistEntry in entries)
+                foreach (var playlistEntry in entries.Where(playlistEntry => !session.Query<PlaylistEntry>().Any(x=>x.Id == playlistEntry.Id)))
                 {
                     session.SaveOrUpdate(playlistEntry);
                 }
@@ -51,25 +51,10 @@ namespace PlaylistSaver.Storage.NHibernate
         {
             using (session.BeginTransaction())
             {
-                /*return
-                    session.QueryOver<PlaylistEntry>()
-                        .Where(x => x.Radio == stationKey)
-                        .OrderBy(x => x.Time)
-                        .Desc.Select(x => x.Time)
-                        .Take(1)
-                        .SingleOrDefault()
-                        .Time;*/
-
-                var q = session.QueryOver<PlaylistEntry>()
+                return session.QueryOver<PlaylistEntry>()
                     .Where(x => x.Radio == stationKey)
                     .OrderBy(x => x.Time)
-                    .Desc;
-                var list = q.Take(1).List();
-                return list.FirstOrDefault().Time;
-
-                var entries = session.CreateCriteria(typeof (PlaylistEntry)).List<PlaylistEntry>();
-                return (from e in entries where e.Radio==stationKey
-                        orderby e.Time descending select e.Time).FirstOrDefault();
+                    .Desc.Take(1).List().FirstOrDefault().Time;
             }
         }
 
