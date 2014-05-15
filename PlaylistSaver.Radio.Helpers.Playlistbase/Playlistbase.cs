@@ -23,7 +23,8 @@ namespace PlaylistSaver.Radio.Helpers.Playlistbase
             var html = web.DownloadString(string.Format(GetEntriesUrl, stationKey, day));
 
             if (string.IsNullOrEmpty(html.Trim())) throw new UnknownStationException();
-            if (html.Contains("Dieser online Radiosender hat keine Playlist-Informationen verf")) return new List<PlaylistEntry>();
+            if (html.Contains("Dieser online Radiosender hat keine Playlist-Informationen verf"))
+                throw new EmptyResultException();
 
             var doc = CQ.Create(html);
             var items = doc["tr"].ToList();

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmptyResultException.cs" />
     <Compile Include="Playlistbase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnknownStationException.cs" />
