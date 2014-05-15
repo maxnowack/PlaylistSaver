@@ -8,7 +8,7 @@ namespace PlaylistSaver.Core
 {
     public interface IPlaylistStorage
     {
-        void Store(IEnumerable<PlaylistEntry> entries);
+        long Store(IEnumerable<PlaylistEntry> entries);
         DateTime GetLastEntry(string stationKey);
     }
 }

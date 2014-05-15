@@ -28,12 +28,15 @@ namespace PlaylistSaver.Storage.NDatabase
         }
 
         private const string DbFileName = "playlist.db";
-        public void Store(IEnumerable<PlaylistEntry> entries)
+        public long Store(IEnumerable<PlaylistEntry> entries)
         {
+            long retVal = 0;
             foreach (var entry in from entry in entries let results = (from e in odb.AsQueryable<PlaylistEntry>() where e.Equals(entry) select e) where !results.Any() select entry)
             {
                 odb.Store(entry);
+                retVal++;
             }
+            return retVal;
         }
         //public void Store(IEnumerable<PlaylistEntry> entries)
         //{

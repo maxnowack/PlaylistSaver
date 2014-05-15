@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
+using FluentNHibernate.Conventions;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Criterion;
+using NHibernate.Linq;
 using NHibernate.Tool.hbm2ddl;
 using PlaylistSaver.Core;
 using PlaylistSaver.Storage.NHibernate.Mappings;
@@ -35,16 +37,19 @@ namespace PlaylistSaver.Storage.NHibernate
             session.Dispose();
         }
 
-        public void Store(IEnumerable<PlaylistEntry> entries)
+        public long Store(IEnumerable<PlaylistEntry> entries)
         {
+            long retVal = 0;
             using (var transaction = session.BeginTransaction())
             {
                 foreach (var playlistEntry in entries.Where(playlistEntry => !session.Query<PlaylistEntry>().Any(x=>x.Id == playlistEntry.Id)))
                 {
                     session.SaveOrUpdate(playlistEntry);
+                    retVal++;
                 }
                 transaction.Commit();
             }
+            return retVal;
         }
 
         public DateTime GetLastEntry(string stationKey)

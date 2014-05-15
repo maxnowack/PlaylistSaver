@@ -77,9 +77,9 @@ namespace PlaylistSaver
                             dateTime, playlistSaver.Name));
                         if (entries.Any())
                         {
-                            storage.Store(entries);
+                            var count = storage.Store(entries);
                             logger.Info(string.Format("{0} entries stored for {2} on {1:yyyy-MM-dd HH:mm}",
-                                entries.Count,
+                                count,
                                 dateTime, playlistSaver.Name));
                         }
                     }
