@@ -63,6 +63,10 @@ namespace PlaylistSaver
                     logger.Error(e);
                 }
 
+                if (times.Any())
+                    logger.Info(string.Format("start interating {0} different times to get entries. Interval: {1}",
+                        times.Count, playlistSaver.DefaultInterval));
+
                 foreach (var dateTime in times)
                 {
                     //logger.Info(string.Format("{0}: {1:yyyy-MM-dd HH:mm}", playlistSaver.Name, dateTime));
@@ -71,9 +75,13 @@ namespace PlaylistSaver
                         var entries = playlistSaver.GetEntrys(dateTime);
                         logger.Info(string.Format("found {0} entries for {2} on {1:yyyy-MM-dd HH:mm}", entries.Count,
                             dateTime, playlistSaver.Name));
-                        storage.Store(entries);
-                        logger.Info(string.Format("{0} entries stored for {2} on {1:yyyy-MM-dd HH:mm}", entries.Count,
-                            dateTime, playlistSaver.Name));
+                        if (entries.Any())
+                        {
+                            storage.Store(entries);
+                            logger.Info(string.Format("{0} entries stored for {2} on {1:yyyy-MM-dd HH:mm}",
+                                entries.Count,
+                                dateTime, playlistSaver.Name));
+                        }
                     }
                     catch (WebException we)
                     {
