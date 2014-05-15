@@ -28,7 +28,7 @@ namespace PlaylistSaver.Radio.NjoyPb
 
         public StartEndSpan GetAvailableTimes()
         {
-            return new StartEndSpan(DateTime.Now.AddMonths(-2), DateTime.Now);
+            return new StartEndSpan(DateTime.Now.AddMonths(-1), DateTime.Now);
         }
 
         public List<PlaylistEntry> GetEntrys(DateTime time)
