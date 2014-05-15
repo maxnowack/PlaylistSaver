@@ -170,9 +170,9 @@
       <Project>{9b8d557f-993a-4814-a2bc-e032663be085}</Project>
       <Name>PlaylistSaver.Radio.YouFm</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PlaylistSaver.Storage.NDatabase\PlaylistSaver.Storage.NDatabase.csproj">
-      <Project>{6b89ad01-55c9-412d-bec9-9e9fa19d5804}</Project>
-      <Name>PlaylistSaver.Storage.NDatabase</Name>
+    <ProjectReference Include="..\PlaylistSaver.Storage.NHibernate\PlaylistSaver.Storage.NHibernate.csproj">
+      <Project>{337ad931-0d17-472f-bf8e-6c1687a10673}</Project>
+      <Name>PlaylistSaver.Storage.NHibernate</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
