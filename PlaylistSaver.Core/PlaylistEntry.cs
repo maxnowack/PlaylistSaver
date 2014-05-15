@@ -4,14 +4,25 @@ namespace PlaylistSaver.Core
 {
     public class PlaylistEntry
     {
-        public string Radio { get; set; }
-        public DateTime Time { get; set; }
-        public string Artist { get; set; }
-        public string Title { get; set; }
+        public virtual string Radio { get; set; }
+        public virtual DateTime Time { get; set; }
+        public virtual string Artist { get; set; }
+        public virtual string Title { get; set; }
 
         protected bool Equals(PlaylistEntry other)
         {
             return string.Equals(Radio, other.Radio) && Time.Equals(other.Time) && string.Equals(Artist, other.Artist) && string.Equals(Title, other.Title);
+        }
+
+        public virtual string Id
+        {
+            get { return string.Format("{0}|{1:yyyy-MM-dd HH:mm}", Radio, Time); }
+            set
+            {
+                var tmp = value.Split('|');
+                Radio = tmp[0];
+                Time = DateTime.Parse(tmp[1]);
+            }
         }
 
         public override int GetHashCode()
