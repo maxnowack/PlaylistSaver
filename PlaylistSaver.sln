@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaylistSaver.Radio.BremenE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaylistSaver.Storage.NHibernate", "PlaylistSaver.Storage.NHibernate\PlaylistSaver.Storage.NHibernate.csproj", "{337AD931-0D17-472F-BF8E-6C1687A10673}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaylistSaver.Radio.Helpers.Basic", "PlaylistSaver.Radio.Helpers.Basic\PlaylistSaver.Radio.Helpers.Basic.csproj", "{FBB0B85B-8F92-44FE-9142-B413430DE7C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +197,10 @@ Global
 		{337AD931-0D17-472F-BF8E-6C1687A10673}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{337AD931-0D17-472F-BF8E-6C1687A10673}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{337AD931-0D17-472F-BF8E-6C1687A10673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBB0B85B-8F92-44FE-9142-B413430DE7C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB0B85B-8F92-44FE-9142-B413430DE7C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB0B85B-8F92-44FE-9142-B413430DE7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB0B85B-8F92-44FE-9142-B413430DE7C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -229,5 +235,6 @@ Global
 		{6B89AD01-55C9-412D-BEC9-9E9FA19D5804} = {AF78D908-1C11-4EB4-A274-6FCD7086EDCE}
 		{337AD931-0D17-472F-BF8E-6C1687A10673} = {AF78D908-1C11-4EB4-A274-6FCD7086EDCE}
 		{D5E8E676-F18F-4E35-A9CD-FC63C4E2F060} = {53349BE5-BA36-4B69-8E83-C79A338E14CA}
+		{FBB0B85B-8F92-44FE-9142-B413430DE7C8} = {53349BE5-BA36-4B69-8E83-C79A338E14CA}
 	EndGlobalSection
 EndGlobal
