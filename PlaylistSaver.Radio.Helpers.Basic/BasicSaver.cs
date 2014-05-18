@@ -1,45 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using CsQuery;
 using PlaylistSaver.Core;
 
 namespace PlaylistSaver.Radio.Helpers.Basic
 {
-    public class BasicSaver<T> where T : class, IPlaylistSaver, new()
+    public class BasicSaver : IPlaylistSaver
     {
-        private readonly TimeSpan defaultInterval;
-        private readonly string radioName;
+        private readonly TimeSpan _defaultInterval;
+        private readonly string _radioName;
+
         public string Name
         {
-            get { return radioName; }
+            get { return _radioName; }
         }
 
-        public static IPlaylistSaver Create()
+        public BasicSaver(string name, TimeSpan interval)
         {
-            return new T();
-        }
-
-        public BasicSaver(string name,TimeSpan interval)
-        {
-            radioName = name;
-            defaultInterval = interval;
+            _radioName = name;
+            _defaultInterval = interval;
         }
 
         public TimeSpan DefaultInterval
         {
-            get { return defaultInterval; }
+            get { return _defaultInterval; }
         }
 
 
-        public StartEndSpan GetAvailableTimes(string html, string optionSelector, Func<List<IDomObject>, DateTime> startTime, Func<List<IDomObject>, DateTime> endTime)
+        public StartEndSpan GetAvailableTimes(string html, Func<CQ,List<IDomObject>> getOptions,
+            Func<List<IDomObject>, DateTime> startTime, Func<List<IDomObject>, DateTime> endTime)
         {
             var doc = CQ.Create(html);
-            var items = doc[optionSelector].ToList();
+            var items = getOptions.Invoke(doc);
 
             return new StartEndSpan(startTime.Invoke(items), endTime.Invoke(items));
         }
@@ -69,6 +63,40 @@ namespace PlaylistSaver.Radio.Helpers.Basic
                 list.Add(entry);
             }
             return list;
+        }
+
+        protected internal string GetWebContent(string url, Dictionary<string,string> data = null, int repeats=0)
+        {
+            try
+            {
+                using (var wc = new WebClient())
+                {
+                    if (data == null)
+                    {
+                        return wc.DownloadString(url);
+                    }
+                    var dataString = string.Join("&", data.Select(x => string.Format("{0}{1}{2}", x.Key, "=", x.Value)));
+                    wc.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
+                    return wc.UploadString(url, dataString);
+                }
+            }
+            catch (WebException)
+            {
+                if (repeats <= 3)
+                    return GetWebContent(url, data, repeats);
+                throw;
+            }
+        }
+
+
+        public virtual StartEndSpan GetAvailableTimes()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual List<PlaylistEntry> GetEntrys(DateTime time)
+        {
+            throw new NotImplementedException();
         }
     }
 }

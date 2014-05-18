@@ -3,56 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using CsQuery;
 using PlaylistSaver.Core;
+using PlaylistSaver.Radio.Helpers.Basic;
 
 namespace PlaylistSaver.Radio.Ffn
 {
-    public class FfnSaver : IPlaylistSaver
+    public class FfnSaver : BasicSaver
     {
-        public string Name { get { return "FFN"; } }
-        public TimeSpan DefaultInterval { get { return TimeSpan.FromMinutes(5); } }
+        public FfnSaver() : base("FFN", TimeSpan.FromMinutes(3)) { }
         public static IPlaylistSaver Create()
         {
             return new FfnSaver();
         }
-
-        public StartEndSpan GetAvailableTimes()
+        public override StartEndSpan GetAvailableTimes()
         {
-
-            var doc = CQ.CreateFromUrl("http://www.ffn.de/musik/playlist.html");
-            var items = doc[".playlist-selector-datepicker option"].ToList();
-
-            return new StartEndSpan(DateTime.Parse(string.Format("{0} {1:HH:mm}", items.First().GetAttribute("value"), DateTime.Now)), DateTime.Parse(items.Last().GetAttribute("value")));
+            return base.GetAvailableTimes(GetWebContent("http://www.ffn.de/musik/playlist.html"),
+                doc => doc[".playlist-selector-datepicker option"].ToList(),
+                items => DateTime.Parse(items.Last().GetAttribute("value")),
+                items => DateTime.Parse(string.Format("{0} {1:HH:mm}", items.First().GetAttribute("value"), DateTime.Now)));
         }
 
-        public List<PlaylistEntry> GetEntrys(DateTime time)
+        public override List<PlaylistEntry> GetEntrys(DateTime time)
         {
-            var doc = CQ.CreateFromUrl(
-                        string.Format(
-                            "http://www.n-joy.de/radio/titelsuche115.html?date={0:yyyy-MM-dd}&time={0:HH}%3A{0:mm}&search_submit=1",
-                            time));
-
-            var items = doc["li.playlist-list-item"].ToList();
-            var list = new List<PlaylistEntry>();
-            foreach (var item in items)
-            {
-                var cq = CQ.Create(item.InnerHTML);
-                var hh = cq[".time-container span"].ToList().FirstOrDefault().InnerText;
-                var mm = cq[".time-container sub"].ToList().FirstOrDefault().InnerText;
-
-                var newTime = DateTime.Parse(string.Format("{0:yyyy-MM-dd} {1}:{2}", time, hh, mm));
-                
-                if (time.Hour > newTime.Hour + 6) newTime = newTime.AddDays(1);
-                if (newTime.Hour > time.Hour + 6) newTime = newTime.AddDays(-1);
-                var entry = new PlaylistEntry
+            return GetEntrys(time,
+                GetWebContent(
+                    "http://www.ffn.de/musik/playlist.html",
+                    new Dictionary<string, string>
+                    {
+                        {"tx_ffnplaylist_pi1[date]", string.Format("{0:dd.MM.yyyy}",time)},
+                        {"tx_ffnplaylist_pi1[hours]", string.Format("{0:HH}",time)},
+                        {"tx_ffnplaylist_pi1[minutes]", string.Format("{0:mm}",time)}
+                    }
+                ),
+                doc => doc["ul.playlist-list-search li.playlist-list-item"].ToList(),
+                cq =>
                 {
-                    Radio = Name,
-                    Time = newTime,
-                    Artist = cq["h3.artist"].ToList().FirstOrDefault().InnerText,
-                    Title = cq["h3.title"].ToList().FirstOrDefault().InnerText
-                };
-                list.Add(entry);
-            }
-            return list;
+                    var hhElm = cq[".time-container span"].ToList().FirstOrDefault();
+                    var mmElm = cq[".time-container sup"].ToList().FirstOrDefault();
+
+                    var hh = hhElm!=null ? hhElm.InnerText : "00";
+                    var mm = mmElm!=null ? mmElm.InnerText : "00";
+                    return DateTime.Parse(string.Format("{0:yyyy-MM-dd} {1}:{2}", time, hh, mm));
+                },
+                cq => cq["h3.artist"].ToList().FirstOrDefault()!=null ? cq["h3.artist"].ToList().FirstOrDefault().InnerText : string.Empty,
+                cq => cq["h3.title"].ToList().FirstOrDefault()!=null ? cq["h3.title"].ToList().FirstOrDefault().InnerText : string.Empty);
         }
     }
 }
