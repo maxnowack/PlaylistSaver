@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
-using FluentNHibernate.Conventions;
 using NHibernate;
 using NHibernate.Cfg;
-using NHibernate.Criterion;
 using NHibernate.Linq;
-using NHibernate.Tool.hbm2ddl;
 using PlaylistSaver.Core;
 using PlaylistSaver.Storage.NHibernate.Mappings;
 
@@ -22,7 +17,11 @@ namespace PlaylistSaver.Storage.NHibernate
         {
             return new NHibernateStorage();
         }
-
+#if DEBUG
+        private const string ConnectionString = "Server=192.168.2.111;Database=playlistsaver;User ID=root;Password=dPfaSiMy5ql?;";
+#else
+        private const string ConnectionString = "Server=localhost;Database=playlistsaver;User ID=root;Password=dPfaSiMy5ql?;";
+#endif
         private ISessionFactory sessionFactory = null;
         private ISession session = null;
 
@@ -65,7 +64,7 @@ namespace PlaylistSaver.Storage.NHibernate
 
         private static ISessionFactory CreateSessionFactory()
         {
-            return Fluently.Configure().Database(MySQLConfiguration.Standard.ConnectionString("Server=localhost;Database=playlistsaver;User ID=root;Password=toor;")).Mappings(x => x.FluentMappings.Add<PlaylistEntryMap>()).BuildSessionFactory();
+            return Fluently.Configure().Database(MySQLConfiguration.Standard.ConnectionString(ConnectionString)).Mappings(x => x.FluentMappings.Add<PlaylistEntryMap>()).BuildSessionFactory();
         }
 
         private static void BuildSchema(Configuration config)
