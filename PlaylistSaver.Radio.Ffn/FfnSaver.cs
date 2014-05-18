@@ -19,11 +19,7 @@ namespace PlaylistSaver.Radio.Ffn
         {
             return base.GetAvailableTimes(GetWebContent("http://www.ffn.de/musik/playlist.html"),
                 doc => doc[".playlist-selector-datepicker option"].ToList(),
-                items =>
-                {
-                    Console.WriteLine(items.Last().GetAttribute("value"));
-                    return DateTime.Parse(items.Last().GetAttribute("value"), CultureInfo.GetCultureInfo("de-DE"));
-                },
+                items => DateTime.Parse(items.Last().GetAttribute("value"), CultureInfo.GetCultureInfo("de-DE")),
                 items => DateTime.Parse(
                                      string.Format("{0} {1:HH:mm}", items.First().GetAttribute("value"), DateTime.Now),
                                      CultureInfo.GetCultureInfo("de-DE")));
