@@ -1,22 +1,39 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using PlaylistSaver.Core;
+using PlaylistSaver.Radio.Helpers.Basic;
+using System.Globalization;
 
 namespace PlaylistSaver.Radio._890Rtl
 {
-    public class _890RtlSaver : IPlaylistSaver
+    public class _890RtlSaver : BasicSaver
     {
-        public string Name { get { return "89.0 RTL"; } }
-        public TimeSpan DefaultInterval { get { return TimeSpan.FromMinutes(60); } }
+        public _890RtlSaver() : base("89.0 RTL", TimeSpan.FromMinutes(60)) { }
 
-        public StartEndSpan GetAvailableTimes()
+        public static IPlaylistSaver Create()
         {
-            throw new NotImplementedException();
+            return new _890RtlSaver();
         }
 
-        public List<PlaylistEntry> GetEntrys(DateTime time)
+        public override StartEndSpan GetAvailableTimes()
         {
-            throw new NotImplementedException();
+            return new StartEndSpan(DateTime.Now.AddYears(-2), DateTime.Now);
+        }
+
+        public override List<PlaylistEntry> GetEntrys(DateTime time)
+        {
+            return base.GetEntrys(
+                time,
+                GetWebContent("http://sites.89.0rtl.de/playlist/playlist_request2014.php",
+                              new Dictionary<string,string>(){
+                                  {"tag",string.Format("{0:dd.MM.yyyy}",time)},
+                                  {"stunde",string.Format("{0:HH}",time)}
+                              }),
+                doc => doc["div.result ul li"].ToList(),
+                cq => DateTime.Parse(string.Format("{0:yyyy-MM-dd} {1}", time, cq["div.date"][0].InnerText)),
+                cq => cq["div.interpret"][0].InnerText,
+                cq => cq["div.title"][0].InnerText);
         }
     }
 }
