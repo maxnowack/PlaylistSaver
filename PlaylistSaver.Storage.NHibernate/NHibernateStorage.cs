@@ -18,7 +18,7 @@ namespace PlaylistSaver.Storage.NHibernate
             return new NHibernateStorage();
         }
 #if DEBUG
-        private const string ConnectionString = "Server=192.168.2.111;Database=playlistsaver;User ID=root;Password=dPfaSiMy5ql?;";
+        private const string ConnectionString = "Server=192.168.2.105;Database=playlistsaver;User ID=root;Password=dPfaSiMy5ql?;";
 #else
         private const string ConnectionString = "Server=localhost;Database=playlistsaver;User ID=root;Password=dPfaSiMy5ql?;";
 #endif
