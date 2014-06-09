@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsQuery, Version=1.3.3.249, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CsQuery.1.3.4\lib\net40\CsQuery.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +50,10 @@
     <ProjectReference Include="..\PlaylistSaver.Core\PlaylistSaver.Core.csproj">
       <Project>{5A0C4F78-7759-48FE-ACC6-6DE99D371487}</Project>
       <Name>PlaylistSaver.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlaylistSaver.Radio.Helpers.Basic\PlaylistSaver.Radio.Helpers.Basic.csproj">
+      <Project>{fbb0b85b-8f92-44fe-9142-b413430de7c8}</Project>
+      <Name>PlaylistSaver.Radio.Helpers.Basic</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlaylistSaver.Radio.Helpers.Playlistbase\PlaylistSaver.Radio.Helpers.Playlistbase.csproj">
       <Project>{D5E8E676-F18F-4E35-A9CD-FC63C4E2F060}</Project>
