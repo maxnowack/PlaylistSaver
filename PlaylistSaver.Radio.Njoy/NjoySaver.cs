@@ -8,7 +8,7 @@ namespace PlaylistSaver.Radio.Njoy
 {
     public class NjoySaver : BasicSaver
     {
-        public NjoySaver() : base("N-Joy", TimeSpan.FromMinutes(5)) { }
+        public NjoySaver() : base("N-Joy", TimeSpan.FromMinutes(10)) { }
         public static IPlaylistSaver Create()
         {
             return new NjoySaver();
