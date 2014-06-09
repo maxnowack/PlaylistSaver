@@ -28,6 +28,7 @@ namespace PlaylistSaver
             //LoadAdditionalAssemblies();
 
             var instances = Factory<IPlaylistSaver>.CreateInstanceList().ToList();
+            instances.Reverse();
             logger.Info(string.Format("{0} savers found", instances.Count));
 
             var storage = Factory<IPlaylistStorage>.CreateInstance();
