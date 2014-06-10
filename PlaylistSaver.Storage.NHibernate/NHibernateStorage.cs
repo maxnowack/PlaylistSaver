@@ -13,6 +13,8 @@ namespace PlaylistSaver.Storage.NHibernate
 {
     public class NHibernateStorage : IPlaylistStorage
     {
+
+        private FixedSizedQueue<PlaylistEntry> queue = new FixedSizedQueue<PlaylistEntry>(100);  
         public static IPlaylistStorage Create()
         {
             return new NHibernateStorage();
@@ -41,9 +43,10 @@ namespace PlaylistSaver.Storage.NHibernate
             long retVal = 0;
             using (var transaction = session.BeginTransaction())
             {
-                foreach (var playlistEntry in entries.Where(playlistEntry => !session.Query<PlaylistEntry>().Any(x=>x.Id == playlistEntry.Id)))
+                foreach (var playlistEntry in entries.Where(playlistEntry => !queue.Contains(playlistEntry)))
                 {
                     session.SaveOrUpdate(playlistEntry);
+                    queue.Enqueue(playlistEntry);
                     retVal++;
                 }
                 transaction.Commit();

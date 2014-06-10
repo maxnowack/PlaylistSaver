@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FixedSizeQueue.cs" />
     <Compile Include="Mappings\PlaylistEntryMap.cs" />
     <Compile Include="NHibernateStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
