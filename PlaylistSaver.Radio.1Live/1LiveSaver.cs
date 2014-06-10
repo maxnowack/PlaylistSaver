@@ -26,13 +26,19 @@ namespace PlaylistSaver.Radio._1Live
         {
             var days = (DateTime.Now - time).Days;
             var html = GetWebContent(string.Format("http://www.einslive.de/musik/playlists/index.jsp?wday={1}&hour={0:HH}&minute={0:mm}", time, days));
-            
-            return GetEntrys(time,
-                html,
-                doc => doc["table[summary^='Die am'] tbody tr"].ToList(),
-                cq => DateTime.ParseExact(cq["td"][0].InnerText, "ddd MMM dd HH:mm:ss CEST yyyy", CultureInfo.InvariantCulture),
-                cq => cq["td"][1].InnerText,
-                cq => cq["td"][2].InnerText);
+
+            if (!html.Contains("Es konnten keine Titel gefunden werden."))
+            {
+                return GetEntrys(time,
+                    html,
+                    doc => doc["table[summary^='Die am'] tbody tr"].ToList(),
+                    cq =>
+                        DateTime.ParseExact(cq["td"][0].InnerText, "ddd MMM dd HH:mm:ss CEST yyyy",
+                            CultureInfo.InvariantCulture),
+                    cq => cq["td"][1].InnerText,
+                    cq => cq["td"][2].InnerText);
+            }
+            return new List<PlaylistEntry>();
         }
     }
 }
