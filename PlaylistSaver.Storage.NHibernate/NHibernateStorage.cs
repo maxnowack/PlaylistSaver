@@ -41,15 +41,22 @@ namespace PlaylistSaver.Storage.NHibernate
         public long Store(IEnumerable<PlaylistEntry> entries)
         {
             long retVal = 0;
-            using (var transaction = session.BeginTransaction())
+            foreach (var playlistEntry in entries.Where(playlistEntry => !queue.Contains(playlistEntry)))
             {
-                foreach (var playlistEntry in entries.Where(playlistEntry => !queue.Contains(playlistEntry)))
+                try
                 {
-                    session.SaveOrUpdate(playlistEntry);
-                    queue.Enqueue(playlistEntry);
-                    retVal++;
+                    using (var transaction = session.BeginTransaction())
+                    {
+                        session.SaveOrUpdate(playlistEntry);
+                        transaction.Commit();
+                    }
                 }
-                transaction.Commit();
+                catch (NonUniqueObjectException)
+                {
+                    
+                }
+                queue.Enqueue(playlistEntry);
+                retVal++;
             }
             return retVal;
         }
@@ -58,6 +65,12 @@ namespace PlaylistSaver.Storage.NHibernate
         {
             using (session.BeginTransaction())
             {
+                queue = new FixedSizedQueue<PlaylistEntry>(100);
+                foreach (var entry in session.QueryOver<PlaylistEntry>().Where(x=>x.Radio==stationKey).OrderBy(x=>x.Time).Desc.Take(100).List())
+                {
+                    queue.Enqueue(entry);
+                }
+
                 return session.QueryOver<PlaylistEntry>()
                     .Where(x => x.Radio == stationKey)
                     .OrderBy(x => x.Time)
